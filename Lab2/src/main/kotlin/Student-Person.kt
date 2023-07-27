@@ -1,3 +1,4 @@
+import kotlin.random.Random
 data class Person(val name: String?, val age: Int, val gender: String?)
 data class Student(val name: String?, val age: Int, val gender: String?, val studentID: String)
 
@@ -13,8 +14,12 @@ fun CreatePerson(personList: MutableList<Person>){
     personList.add(person)
 }
 
-fun CreateStudent(person: Person){
-    
+fun CreateStudent(person: Person, studentList: MutableList<Student>){
+    val random = Random(System.currentTimeMillis())
+    var ID: Int
+
+    var student: Student = Student(person.name, person.age, person.gender, "2973272")
+    studentList.add(student)
 }
 
 fun return_Student(){

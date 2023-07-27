@@ -16,9 +16,7 @@ fun CreatePerson(personList: MutableList<Person>){
 
 fun CreateStudent(person: Person, studentList: MutableList<Student>){
     val random = Random(System.currentTimeMillis())
-    var ID: Int
-
-    var student: Student = Student(person.name, person.age, person.gender, "2973272")
+    var student: Student = Student(person.name, person.age, person.gender, random.nextInt().toString())
     studentList.add(student)
 }
 
@@ -28,8 +26,8 @@ fun return_Student(){
 
 fun main(){
     var condition: Boolean = true
-    var personList: MutableList<Person>
-    var studentList: MutableList<Student>
+    var personList: MutableList<Person> = mutableListOf()
+    var studentList: MutableList<Student> = mutableListOf()
 
     while (condition){
         println("Opcion 1: Crear persona")
@@ -41,12 +39,22 @@ fun main(){
 
         when(option){
             1 ->{
-
+                CreatePerson(personList)
+                println("Persona creada exitosamente")
             }
             2 ->{
-
+                println("Ingresa el nombre de la persona de la que quieres crear un estudiante: ")
+                val name: String? = readLine()
+                var person: Person
+                for (i in personList){
+                    if (i.name == name){
+                        person = i
+                    }
+                }
+                
             }
             3 ->{
+                println("Gracias por usar el programa")
                 condition = false
             }
             4 ->{

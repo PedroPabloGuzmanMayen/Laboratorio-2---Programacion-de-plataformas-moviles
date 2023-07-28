@@ -1,11 +1,12 @@
 fun operation(num1: Int, num2: Int ,operation:(Int, Int) -> Int ): Int = operation(num1,num2) //Definir la funcion que recibe otra funcion  como parámetro
 fun main(){
+    //Definir las expresiones lambda
     val sum = {num1: Int, num2:Int -> num1+num2}
     val sub = {num1: Int, num2: Int -> num1-num2}
     val mul = {num1: Int, num2: Int -> num1*num2}
     val div = {num1: Int, num2: Int -> num1/num2}
     val mod = {num1: Int, num2: Int -> num1%num2}
-    var condition: Boolean = true
+    var condition: Boolean = true //Nos ayudara a que el usuario pueda realizar varias operaciones
 
     while (condition){
         println("Bienvenido, en este programa puedes realizar las siguientes operaciones entre 2 enteros:  ")
@@ -22,6 +23,7 @@ fun main(){
         val num1: Int = readLine()?.toInt()?:0
         println("Ingresa el siguiente entero: ")
         val num2: Int = readLine()?.toInt()?:0
+        //Utilizar las funciones lambda y los inputs del usuario para realizar las operaciones
         when(option){
             1->{
                println(operation(num1, num2, sum))

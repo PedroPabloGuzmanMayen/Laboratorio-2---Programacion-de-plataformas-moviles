@@ -44,9 +44,9 @@ fun return_Student(name: String?, studentList: MutableList<Student>){
 
 fun main(){
     var condition: Boolean = true //Esta condicion nos ayudara a mantener el ciclo
-    var personList: MutableList<Person> = mutableListOf() //Esta lista
-    var studentList: MutableList<Student> = mutableListOf()
-    var counter: Int = 0
+    var personList: MutableList<Person> = mutableListOf() //Esta lista almacena los objetos tipo Person
+    var studentList: MutableList<Student> = mutableListOf() //Esta lista almacena los objetos tipo Student
+    var counter: Int = 0 //Este contador nos sirve para determinar si un objeto dado por el usuario existe
     while (condition){
         println("Opcion 1: Crear persona")
         println("Opcion 2: Crear estudiante a partir de una persona")
